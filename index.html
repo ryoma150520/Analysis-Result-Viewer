@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result Viewer [HTML/JS]</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis Result Viewer [HTML/JS]</h1>
+
+        <div class="controls">
+            <div class="control-item">
+                <label for="genre-select">ジャンル選択</label>
+                <select id="genre-select"></select>
+            </div>
+            <div class="control-item">
+                <label for="title-select">タイトル選択</label>
+                <select id="title-select"></select>
+            </div>
+        </div>
+
+        <h2 class="section-header">説明文</h2>
+        <div class="display-area">
+            <div id="text-display" class="code-block"></div>
+            <button id="copy-text-btn" class="copy-btn">Copy</button>
+        </div>
+
+        <h2 class="section-header">重要文</h2>
+        <div class="display-area">
+            <div id="sentence-display" class="code-block"></div>
+            <button id="copy-sentence-btn" class="copy-btn">Copy</button>
+        </div>
+        
+        <h2 class="section-header">品詞別 単語解析</h2>
+        <div id="analysis-grid" class="word-grid"></div>
+        
+        <h2 class="section-header">重要単語</h2>
+        <div id="important-words-grid" class="word-grid"></div>
+
+        <p id="status">データを読み込んでいます...</p>
+    </div>
+
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
