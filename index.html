@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result Viewer [HTML/JS]</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis Result Viewer [HTML/JS]</h1>
+
+        <div class="controls">
+            <div class="control-item">
+                <label for="genre-select">ジャンル選択</label>
+                <select id="genre-select"></select>
+            </div>
+            <div class="control-item">
+                <label for="title-select">タイトル選択</label>
+                <select id="title-select"></select>
+            </div>
+        </div>
+
+        <div class="accordion-section">
+            <h2 class="accordion-header">説明文<span class="accordion-icon">-</span></h2>
+            <div class="accordion-content">
+                <div class="display-area">
+                    <div id="text-display" class="code-block"></div>
+                    <button id="copy-text-btn" class="copy-btn">Copy</button>
+                </div>
+                <div class="translation-controls">
+                    <button class="action-btn translate-btn" data-target="text-display-en">英訳</button>
+                </div>
+                <div id="text-display-en" class="translation-display"></div>
+            </div>
+        </div>
+
+        <div class="accordion-section">
+            <h2 class="accordion-header">重要文<span class="accordion-icon">-</span></h2>
+            <div class="accordion-content">
+                <div class="display-area">
+                    <div id="sentence-display" class="code-block"></div>
+                    <button id="copy-sentence-btn" class="copy-btn">Copy</button>
+                </div>
+                <div class="translation-controls">
+                    <button class="action-btn translate-btn" data-target="sentence-display-en">英訳</button>
+                </div>
+                <div id="sentence-display-en" class="translation-display"></div>
+            </div>
+        </div>
+        
+        <div class="accordion-section">
+            <h2 class="accordion-header">品詞別 単語解析<span class="accordion-icon">-</span></h2>
+            <div class="accordion-content">
+                <div id="analysis-grid" class="word-grid"></div>
+            </div>
+        </div>
+        
+        <div class="accordion-section">
+            <h2 class="accordion-header">重要単語[TF-IDF]<span class="accordion-icon">-</span></h2>
+            <div class="accordion-content">
+                <div id="important-words-grid" class="word-grid"></div>
+            </div>
+        </div>
+
+        <div class="accordion-section">
+            <h2 class="accordion-header">Images Viewer<span class="accordion-icon">-</span></h2>
+            <div class="accordion-content">
+                <div class="image-viewer-controls">
+                    <div class="control-item">
+                        <label for="image-prompt-select">プロンプト選択</label>
+                        <select id="image-prompt-select"></select>
+                    </div>
+                </div>
+                <div class="image-actions">
+                    <button id="download-image-btn" class="action-btn">Download</button>
+                </div>
+                <div id="image-display-container" class="image-display-container"></div>
+                <div id="thumbnail-grid" class="thumbnail-grid"></div>
+            </div>
+        </div>
+
+        <p id="status">データを読み込んでいます...</p>
+    </div>
+
+    <div id="loading-overlay" class="loading-overlay"><div class="spinner"></div></div>
+    <script src="script.js"></script>
+</body>
+</html>
